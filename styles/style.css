@@ -30,7 +30,7 @@ header {    /*selektor taga*/
     padding: 0.25em;
 }
 
-#search-container .search-icon {
+#search-container .fa-search {  /*po klasi fa-search iz drugog stila*/
     color: black;
 }
 
