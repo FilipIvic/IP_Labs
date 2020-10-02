@@ -9,7 +9,7 @@ body {
     --light-secondary-color: #d3d3d3;
 }
 
-header {
+header {    /*selektor taga*/
     background-color: var(--primary-color);
 
     display: flex;
@@ -25,7 +25,7 @@ header {
     z-index: 1;
 }
 
-#search-container {
+#search-container {     /*selektor id*/
     background-color: white;
     padding: 0.25em;
 }
@@ -46,7 +46,7 @@ main {
     padding: 0 0.5em;
 }
 
-main > nav {
+main > nav {    /*selektor djeteta*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,14 +56,14 @@ img {
     width: 100%;
 }
 
-.links-container a {
+.links-container a {    /*selektor svih potomaka klase*/
     background-color: var(--light-primary-color);
     color: white;
     padding: 0.1em 0.25em;
     text-decoration: none;
 }
 
-.links-container a:hover {
+.links-container a:hover {  /*selektor hover*/
     text-decoration: underline;
 }
 
