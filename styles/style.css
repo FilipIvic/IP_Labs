@@ -136,13 +136,51 @@ img {
 @media screen and (max-width: 450px){
     nav .logo-container { display: none; }
 }
+#add-card-button{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-bottom: 15px;
+}
+#add-card-button:hover{background-color: #3e8e41}
 
+#add-card-button:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
 #cards-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;     /*koliko redaka i stupaca po gridu*/
     grid-column-gap: 0.5em;
     grid-row-gap: 0.5em;
+}
+
+.clickable-icon {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.clickable-icon:hover {
+    transform: scale(1.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.fa-heart {
+    color: red;
 }
 
 @media screen and (max-width: 700px) {

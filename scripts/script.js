@@ -31,7 +31,7 @@ function selectThumbnail(thumbnail) {
     let sliderMainImage = document.querySelector("#slider-main-picture-container img");
     sliderMainImage.src = clickedThumbnailLargeImagePath;
 }
-
+//--------------------------------------------------------------------------------------------------------------------
 let sliderRightArrow = document.querySelector("#slider .slider-arrow-right");
 sliderRightArrow.addEventListener("click", handleRightArrowClick);
 
@@ -59,13 +59,12 @@ function getSelectedThumbnailIndex(){
 
     return -1;
 }
-
+//---------------------------------------------------------------------------------------------------------------------
 let sliderLeftArrow = document.querySelector("#slider .slider-arrow-left");
 sliderLeftArrow.addEventListener("click", handleLeftArrowClick);
 
 function handleLeftArrowClick(){
     let thumbnails = document.querySelectorAll("#slider .thumbnail");
-    let selectedThumbnail = document.querySelector("#slider .thumbnail.selected");
     let currentIndex = getSelectedThumbnailIndex();
     let nextIndex = currentIndex - 1;
 
@@ -73,6 +72,41 @@ function handleLeftArrowClick(){
         nextIndex = thumbnails.length - 1;
     }
     selectThumbnail(thumbnails[nextIndex]);
-
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+//Brisanje
+
+let deleteButtons = document.querySelectorAll("#cards-container .delete-button");
+for(let i = 0; i < deleteButtons.length; i++){
+    let deleteButton = deleteButtons[i];
+    deleteButton.addEventListener("click", handleDeleteCardClick);
+}
+
+function handleDeleteCardClick(e){
+    let clickedCard = e.currentTarget.parentElement;
+    let cardTitle = clickedCard.querySelector("h3");
+
+    if(confirm("Izbrisati karticu: " + cardTitle.textContent + "?")){
+        clickedCard.remove();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+
+let hearts = document.querySelectorAll("#cards-container .heart-icon");
+for(let i = 0; i < hearts.length; i++){
+    let heart = hearts[i];
+    heart.addEventListener("click", handleHeartClick);
+}
+
+function handleHeartClick(e){
+    let clickedHeart = e.currentTarget;
+    if(clickedHeart.classList.contains("fa-heart-o")){
+        clickedHeart.classList.remove("fa-heart-o");
+        clickedHeart.classList.add("fa-heart");
+    }else{
+        clickedHeart.classList.add("fa-heart-o");
+        clickedHeart.classList.remove("fa-heart");
+    }  
+}
